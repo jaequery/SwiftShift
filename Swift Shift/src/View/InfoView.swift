@@ -17,7 +17,7 @@ struct InfoView: View {
         Group {
             VStack {
                 HStack(alignment: .bottom) {
-                    Text("⌘ Swift Shift").font(.headline)
+                    Text("10xer").font(.headline)
                     if version != nil {
                         Text("v" + version!).font(.subheadline)
                     }
@@ -26,23 +26,32 @@ struct InfoView: View {
                 Text("Made with 🩵 by")
 
                 Button(action: {
-                    guard let url = URL(string: "https://pablopunk.com") else {
+                    guard let url = URL(string: "https://jaequery.dev") else {
                         print("Invalid URL")
                         return
                     }
                     NSWorkspace.shared.open(url)
                 }, label: {
-                    Text("Pablo Varela")
+                    Text("Jae Lee")
+                }).buttonStyle(.link)
+                
+                Button(action: {
+                    guard let url = URL(string: "https://x.com/jaequery") else {
+                        print("Invalid URL")
+                        return
+                    }
+                    NSWorkspace.shared.open(url)
+                }, label: {
+                    Text("Follow me on X")
                 }).buttonStyle(.link)
 
                 Button(action: {
-                    guard let url = URL(string: "https://github.com/pablopunk/SwiftShift") else {
+                    guard let url = URL(string: "https://github.com/jaequery/SwiftShift") else {
                         print("Invalid URL")
                         return
                     }
                     NSWorkspace.shared.open(url)
                 }, label: {
-                    Image(systemName: "swift")
                     Text("Go to Open Source Project")
                 })
                 .padding(.top)

@@ -16,29 +16,7 @@ struct PreferencesView: View {
                 Text("Show menu bar icon")
                 Text("Open the app again to re-enable the icon")
                     .fixedSize(horizontal: false, vertical: true)
-            }
-            
-            Toggle(isOn: $focusOnApp) {
-                Text("Focus on window")
-                Text("The window you're interacting with will gain focus")
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-            
-            Toggle(isOn: $useQuadrants) {
-                Text("Use quadrants")
-                Text("The resize action will happen from the edge/corner that's closer to your mouse")
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-            
-            Toggle(isOn: $requireMouseClick) {
-                Text("Require mouse click")
-                Text("Allows you to use the mouse buttons in your shortcuts")
-                    .fixedSize(horizontal: false, vertical: true)
-            }.onChange(of: requireMouseClick, perform: { newValue in
-                if newValue == false {
-                    ShortcutsManager.shared.removeClickActionsForAll()
-                }
-            })
+            }            
         }
     }
 }

@@ -20,14 +20,6 @@ struct SettingsView: View {
         VStack(alignment: .leading) {
             
             VStack(alignment: .leading) {
-                Text("Preferences").font(.title2).bold()
-                
-                PreferencesView()
-            }.padding(.horizontal)
-            
-            Divider()
-            
-            VStack(alignment: .leading) {
                 Text("Shortcuts").font(.title2).bold()
                 
                 if hasPermissions {
@@ -40,6 +32,12 @@ struct SettingsView: View {
                 } else {
                     PermissionRequestView().padding(.vertical, 5)
                 }
+            }.padding(.horizontal)
+            
+            Divider()
+            
+            VStack(alignment: .leading) {
+                PreferencesView()
             }.padding(.horizontal)
             
             Divider()
